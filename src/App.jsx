@@ -57,7 +57,7 @@ function App() {
 
   return (
     <>
-      <div className="flex">
+      <main className="flex h-screen gap-8">
         <SideBar
           onChangeView={handleViewMode}
           projectData={projectData}
@@ -78,7 +78,7 @@ function App() {
         ) : (
           <EmptyProject onChangeView={handleViewMode}/>
         )}
-      </div>
+      </main>
     </>
   );
 }
