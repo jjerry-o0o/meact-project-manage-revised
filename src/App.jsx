@@ -8,7 +8,7 @@ import {useState} from "react";
 function App() {
   const [viewMode, setViewMode] = useState("Empty");
   const [projectData, setProjectData] = useState([]);
-  const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const [selectedProjectId, setSelectedProjectId] = useState(undefined);
   const [projectId, setProjectId] = useState(0);
 
   function handleViewMode(view) {
@@ -16,7 +16,7 @@ function App() {
   }
 
   function saveProjectData(title, description, dueDate) {
-    setProjectData((prevProjectData) => {
+    setProjectData(prevProjectData => {
       return [{
         projectId: projectId,
         title,
@@ -28,13 +28,13 @@ function App() {
       ];
     });
 
-    setProjectId((prevProjectId) => prevProjectId + 1)
+    setProjectId(prevProjectId => prevProjectId + 1)
     setViewMode("Empty");
   }
 
   function updateProjectData(description, tasks) {
-    setProjectData((prevProjectData) => {
-      prevProjectData.map((project) => {
+    setProjectData(prevProjectData => {
+      prevProjectData.map(project => {
         if (project.projectId === selectedProjectId) {
           project.description = description;
           project.tasks = tasks;
@@ -48,8 +48,8 @@ function App() {
   }
 
   function deleteProjectData() {
-    setProjectData((prevProjectData) => {
-      return prevProjectData.filter((data) => data.projectId !== selectedProjectId);
+    setProjectData(prevProjectData => {
+      return prevProjectData.filter(data => data.projectId !== selectedProjectId);
     });
 
     setViewMode("Empty");
@@ -71,7 +71,7 @@ function App() {
           />
         ) : viewMode === "Manage" ? (
           <ProjectManage
-            selectedProjectData={projectData.find((data) => data.projectId === selectedProjectId)}
+            selectedProjectData={projectData.find(data => data.projectId === selectedProjectId)}
             onUpdateProject={updateProjectData}
             onDeleteProject={deleteProjectData}
           />

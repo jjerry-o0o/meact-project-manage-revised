@@ -1,3 +1,5 @@
+import Button from "./Button.jsx";
+
 export default function SideBar({ onChangeView, projectData, selectedId, onSelectedProject }) {
   function selectedTitle(projectId) {
     onSelectedProject(projectId);
@@ -5,15 +7,14 @@ export default function SideBar({ onChangeView, projectData, selectedId, onSelec
   }
   return (
     <>
-      <aside className="float-left bg-black rounded-tr-lg w-2/12 md:w-72 py-14 pl-8 mt-8">
-        <h2 className="text-white text-lg font-semibold pb-8">YOUR PROJECTS</h2>
+      <aside className="float-left bg-black rounded-tr-lg w-2/12 md:w-72 pl-8 mt-8">
+        <h2 className="text-white text-lg font-semibold mt-10 pb-8">YOUR PROJECTS</h2>
         <div>
-          <button
-            className="bg-neutral-700 text-neutral-400 py-2 px-3 rounded-md hover:bg-neutral-600 hover:text-neutral-300"
-            onClick={() => onChangeView("Create")}
+          <Button
+            // onClick={() => onChangeView("Create")}
           >
             + Add Project
-          </button>
+          </Button>
         </div>
 
         <ul className="flex flex-col space-y-4 mt-8 w-5/6">
