@@ -6,3 +6,5 @@
 2. 반응형 디자인 추가 (md: , hover: 등) , 정렬 하는 부분 개선 (flex, center 등)
 3. 중복 되던 코드 수정
    - input, button 코드들 -> Input, Button 컴포넌트로 분리
+4. forwardRef 활용
+   - 컴포넌트를 세분화 함에 따라 ref 를 자식 컴포넌트(Input)에 전달하여 사용

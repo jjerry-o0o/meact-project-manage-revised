@@ -10,7 +10,7 @@ export default function EmptyProject({ onChangeView }) {
         <h2 className="text-2xl text-neutral-700 font-extrabold my-4">No Project Selected</h2>
         <p className="text-neutral-400 font-semibold">Select a project or get started with a new one</p>
         <Button
-Button          onClick={() => onChangeView("Create")}
+          onClick={() => onChangeView("Create")}
         >
           Create new project
         </Button>

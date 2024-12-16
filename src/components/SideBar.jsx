@@ -11,7 +11,7 @@ export default function SideBar({ onChangeView, projectData, selectedId, onSelec
         <h2 className="text-white text-lg font-semibold mt-10 pb-8">YOUR PROJECTS</h2>
         <div>
           <Button
-            // onClick={() => onChangeView("Create")}
+            onClick={() => onChangeView("Create")}
           >
             + Add Project
           </Button>

@@ -29,9 +29,9 @@ export default function CreateProject({ onChangeView, onSave }) {
       </menu>
 
       <div>
-        <Input label="Title"/>
-        <Input label="Description" textarea/>
-        <Input label="Due Date"/>
+        <Input ref={inputTitle} label="Title"/>
+        <Input ref={inputDescription} label="Description" textarea/>
+        <Input ref={inputDueDate} label="Due Date"/>
 
         {/*
         <label className="text-neutral-500 font-semibold mb-1">TITLE</label>
