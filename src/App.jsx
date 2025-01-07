@@ -15,13 +15,11 @@ function App() {
     setViewMode(view);
   }
 
-  function saveProjectData(title, description, dueDate) {
+  function saveProjectData(projectData){
     setProjectData(prevProjectData => {
       return [{
+        ...projectData,
         projectId: projectId,
-        title,
-        description,
-        dueDate,
         tasks: []
       },
         ...prevProjectData
