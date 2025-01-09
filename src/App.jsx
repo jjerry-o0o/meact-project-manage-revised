@@ -16,13 +16,15 @@ function App() {
   }
 
   function saveProjectData(projectData){
+    console.log(`프로젝트 데이터 : ${projectData}`)
     setProjectData(prevProjectData => {
-      return [{
-        ...projectData,
-        projectId: projectId,
-        tasks: []
-      },
-        ...prevProjectData
+      return [
+        ...prevProjectData,
+        {
+          ...projectData,
+          projectId: projectId,
+          tasks: []
+        },
       ];
     });
 

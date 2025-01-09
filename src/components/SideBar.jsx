@@ -20,7 +20,7 @@ export default function SideBar({ onChangeView, projectData, selectedId, onSelec
         <ul className="flex flex-col space-y-4 mt-8 w-5/6">
           {projectData.map(({projectId, title}) =>
             <li key={projectId}
-               className={projectId === selectedId ? "text-neutral-400 pl-3 bg-neutral-900" : "text-neutral-400 pl-3"}
+               className={projectId === selectedId ? "text-neutral-200 pl-3 bg-neutral-900" : "text-neutral-400 pl-3 hover:text-neutral-200 hover:bg-neutral-900"}
                onClick={() => selectedTitle(projectId)}
             >
               {title}

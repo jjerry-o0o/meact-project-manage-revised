@@ -11,7 +11,19 @@ export default function CreateProject({ onChangeView, onSave }) {
     const enteredDescription = inputDescription.current.value;
     const enteredDueDate = inputDueDate.current.value;
 
-    onSave({enteredTitle, enteredDescription, enteredDueDate})
+    if(
+      enteredTitle.trim() === ''
+      || enteredDescription.trim() === ''
+      || enteredDueDate.trim() === ''
+    ) {
+
+    }
+
+    onSave({
+      title:enteredTitle,
+      description:enteredDescription,
+      dueDate:enteredDueDate
+    });
   }
 
   return (
@@ -20,8 +32,7 @@ export default function CreateProject({ onChangeView, onSave }) {
         <li>
           <button
             className="border border-neutral-300 rounded-md w-20 py-1.5"
-            type="button" onClick={() => onChangeView("Empty")}
-          >
+            type="button" onClick={() => onChangeView("Empty")}>
             Cancel
           </button>
         </li>
