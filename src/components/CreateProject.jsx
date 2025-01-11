@@ -1,7 +1,10 @@
 import { useRef } from "react";
 import Input from "./Input.jsx";
+import Modal from "./Modal.jsx";
 
 export default function CreateProject({ onChangeView, onSave }) {
+  const modal = useRef();
+
   const inputTitle = useRef(null);
   const inputDescription = useRef(null);
   const inputDueDate = useRef(null);
@@ -16,7 +19,9 @@ export default function CreateProject({ onChangeView, onSave }) {
       || enteredDescription.trim() === ''
       || enteredDueDate.trim() === ''
     ) {
-
+      console.log("nana");
+      modal.current.open();
+      return;
     }
 
     onSave({
@@ -27,6 +32,12 @@ export default function CreateProject({ onChangeView, onSave }) {
   }
 
   return (
+    <>
+    <Modal ref={modal} buttonCaption="Okay">
+      <h2 className="text-2xl text-neutral-800 font-extrabold my-4">Invalid Input</h2>
+      <p className="text-neutral-600 font-semibold">Oops ... looks like you forgot to enter a value.</p>
+      <p className="text-neutral-600 font-semibold">Please make sure you provide a valid value for every input field.</p>
+    </Modal>
     <div className="w-[35rem] mt-16">
       <menu className="flex items-center justify-end gap-4 my-4">
         <li>
@@ -53,5 +64,6 @@ export default function CreateProject({ onChangeView, onSave }) {
         <Input type="date" ref={inputDueDate} label="Due Date"/>
       </div>
     </div>
+    </>
   );
 }
